@@ -58,6 +58,7 @@ class EnvironmentOptions(object):
     def __init__(self):
         self.hdf5 = os.environ.get('HDF5_DIR')
         self.hdf5_version = os.environ.get('HDF5_VERSION')
+        self.hdf5_version = self.hdf5_version.replace('p', '')
         self.mpi = os.environ.get('HDF5_MPI') == "ON"
         if self.hdf5_version is not None:
             validate_version(self.hdf5_version)
